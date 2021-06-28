@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRICK BREAKER GAME</title>
+    <link rel="stylesheet" href="brick.css"/>
+</head>
+<body>
+    <div class="menupage">
+        <div class="playbtn">
+            Start Game
+        </div>
+    </div>
+
+     
+    <div id="gameover">
+        <img src="youwon.png" alt="" id="youwon">
+        <img src="gameover.png" alt="" id="youlose">
+        <div id="restart">Play Again!</div>
+    </div>
+
+    <div class="sound">
+        <img src="SOUND_ON.png" alt="" id="sound">
+    </div>
+
+    <div class="instruct">
+        <h1>INSTRUCTIONS</h1>
+        <div class="in-box">
+            <ul type="square">
+                <li>MOVE THE PADDLE WITH THE ARROW KEYS i.e LEFT & RIGHT. </li><br>
+                <li>EACH BRICK HIT IS WORTH 10 POINTS.</li><br>
+                <li>YOU HAVE 3 LIVES, LOSE THEM AND IT'S GAMEOVER.</li><br>
+                <li>THERE ARE 3 LEVELS COMPLETE THEM ALL TO WIN!</li><br>
+                <li>TO TURN ON/OFF SOUND, PRESS SOUND BUTTON</li>
+            </ul>
+        </div>
+    </div>
+
+    <canvas id="breakout" width="500" height="700"></canvas>
+    <script src="brick.js"></script>
+</body>
+</html>
