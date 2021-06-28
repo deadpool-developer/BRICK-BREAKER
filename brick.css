@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    background-image: url("bg.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+   }
+
+#breakout{
+    border: 15px solid black;
+    position: absolute;
+    left: 30%;
+    top: 12%;
+    background-image: url("star.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    box-shadow: 0px 10px 1px black, 0 10px 20px black;
+    background-position: center;
+    
+} 
+#sound{
+    width: 30px;
+    height : 30px;
+    cursor: pointer;
+    margin-left: 27vw;
+    margin-top: 60vh;
+}
+
+.menupage {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    cursor: default;
+    transition: all 1s ease;
+    background-image: url("bgimage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.menupage .playbtn {
+    top: 80%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    padding: 10px 10px;  
+    background-color: greenyellow;
+    font-family: "Source Code Pro";
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 30px;  
+    text-align: center;
+    width: 220px;
+    height: 50px;
+    border: 1px solid whitesmoke;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    color: #c6e2ff;
+    animation: neon .5s ease-in-out infinite alternate;
+  }
+
+@keyframes neon {
+  from {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.92),
+    0 0 30px rgba(202,228,225,0.34),
+    0 0 12px rgba(30, 235, 242, 0.52),
+    0 0 21px rgba(30, 97, 242, 0.92),
+    0 0 34px rgba(76, 30, 242, 0.78),
+    0 0 54px rgba(164, 30, 242, 0.92);
+  }
+  to {
+    text-shadow:
+    0 0 6px rgba(202,228,225,0.98),
+    0 0 30px rgba(202,228,225,0.42),
+    0 0 12px rgba(242, 72, 30, 0.603),
+    0 0 22px rgba(242, 132, 30, 0.84),
+    0 0 38px rgba(242, 185, 30, 0.88),
+    0 0 60px rgb(37, 242, 30);
+  }
+}
+
+
+
+.playbtn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.playbtn:active {
+    color: #000
+}
+
+.playbtn:active:after {
+    background: transparent;
+}
+
+.playbtn:hover:before {
+    opacity: 1;
+}
+
+.playbtn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+#gameover{
+    position: absolute;
+    width : 28vw;
+    height: 50vh;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    margin-left: 33vw ;
+    margin-top: 30vh;
+    z-index: 10;
+    /* background-color: black; */
+    
+    
+}
+#youwon{
+    width: 100px;
+    position: absolute;
+    top : 200px;
+    left : 150px;
+    display: none;
+}
+#youlose{
+    width:400px;
+    position: absolute;
+    top: 100px;
+    left : 0px;
+    display: none;
+}
+#restart{
+    position: absolute;
+    top: 310px;
+    left : 155px;
+    cursor: pointer;
+    font-size: 1.25em;
+    color : black;
+    animation: light 10s infinite;
+    border-radius:3px ;
+    font-weight: bolder;
+    font-family: "Source Code Pro";
+}
+
+@keyframes light {
+    0% {
+      background-color: rgb(253, 80, 0);
+    }
+    10% {
+      background-color: rgb(253, 215, 0);
+    }
+    20% {
+      background-color: rgb(143, 253, 0);
+    }
+    30% {
+      background-color: rgb(0, 253, 156);
+    }
+    40% {
+      background-color: rgb(0, 173, 253);
+    }
+    50% {
+      background-color: rgb(0, 89, 253);
+    }
+    60% {
+      background-color: rgba(141, 32, 184, 0.726);
+    }
+    70% {
+      background-color: rgb(131, 26, 105);
+    }
+    80% {
+      background-color: rgb(173, 0, 253);
+    }
+    90% {
+      background-color: rgb(123, 202, 248);
+    }
+    100% {
+      background-color: rgb(59, 59, 59);
+    }
+  }
+
+  .in-box{
+      color: black;
+      width: 20vw;
+      height: 30vh;
+      /* margin-left: 8vw; */
+      /* margin-top: -12vh; */
+  }
+  
+  .instruct{
+      margin-top: -30vh;
+      float: right;
+      margin-right: 10vw;
+      font-size: large;
+  }
+
+  h1{
+      font-size: 45px;
+      margin-bottom: 2vh;
+  }
+
+  ul{
+      margin-left: 3vw;
+  }
