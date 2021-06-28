@@ -140,7 +140,7 @@ function ballWallCollision() {
 // RESET THE BALL
 function resetBall() {
     ball.x = cvs.width / 2;
-    ball.y = paddle.y - ball.radius;
+    ball.y = paddle.y - BALL_RADIUS;
     ball.dx = 3 * (Math.random() * 2 - 1);
     ball.dy = -3;
 }
@@ -167,7 +167,7 @@ function ballPaddleCollision() {
     }
 }
 const brick = {
-    row: 1,
+    row: 3,
     column: 8,
     width: 55,
     height: 20,
@@ -284,10 +284,7 @@ function levelUp() {
         brick.row++;
         createBricks();
         ball.speed += 0.8;
-        ball.radius -= 15;
         resetBall();
-        // paddle.width -= 15;
-        // drawPaddle();
 
         LEVEL++;
     }
